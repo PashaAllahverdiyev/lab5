@@ -8,19 +8,23 @@
 //    Console.WriteLine();
 //}
 int[] firstArr = { 211, 9, -6, 12, 34, 56, 32, 5, 19 };
-int[] secondArr = { 19, -6, 32 };
-bool check = true;
-for (int i = 0; i < firstArr.Length; i++)
+int[] secondArr = { 19, -6, 32};
+bool check = false;
+for (int i = 0; i < secondArr.Length; i++)
 {
-  for (int j = 0; j < secondArr.Length; j++)
+    check = false;
+  for (int j = 0; j <firstArr.Length; j++)
     {
-        if (firstArr[i]==secondArr[j])
+        if (secondArr[i]==firstArr[j])
         {
-            Console.WriteLine(check=true);
-        }
-        else
-        {
-            Console.WriteLine(check &= false);
+            check = true;
+            break;
         }
     }
+       if(check==false)
+        {
+            check=false;
+            break;
+        }
 }
+    Console.WriteLine(check);
